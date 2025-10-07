@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Pengguna</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-8">
+    <div class="max-w-4xl mx-auto">
+        <h1 class="text-3xl font-bold text-center mb-8 text-gray-800">Dashboard Pengguna</h1>
+        <div id="dashboard" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="bg-white p-6 rounded-lg shadow text-center">
+                <h2 class="text-xl font-semibold mb-2">Total Pengguna</h2>
+                <p id="totalUsers" class="text-3xl font-bold text-gray-700">...</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow text-center">
+                <h2 class="text-xl font-semibold mb-2">Rata-rata Umur</h2>
+                <p id="averageAge" class="text-3xl font-bold text-gray-700">...</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow text-center">
+                <h2 class="text-xl font-semibold mb-2">Pengguna per Kota</h2>
+                <ul id="usersPerCity" class="text-gray-700 list-disc list-inside"></ul>
+            </div>
+        </div>
+        <div id="loading" class="text-center mt-4 text-gray-600">Memuat data...</div>
+        <div id="error" class="text-center mt-4 text-red-600 hidden">Gagal memuat data.</div>
+    </div>
+
+    <script>
+        async function loadDashboard() {
+            try {
+                console.log('Memulai fetch data dashboard...');
+                const response = await fetch('/api/dashboard');
+                console.log('Response status:', response.status);
+                if (!response.ok) {
+                    throw new Error('Gagal mengambil data: ' + response.statusText);
+                }
+                const data = await response.json();
+                console.log('Data diterima:', data);
+                displayDashboard(data);
+            } catch (error) {
+                console.error('Error saat fetch data dashboard:', error);
+                document.getElementById('loading').classList.add('hidden');
+                document.getElementById('error').classList.remove('hidden');
+            }
+        }
+
+        function displayDashboard(data) {
+            document.getElementById('totalUsers').textContent = data.totalUsers;
+            document.getElementById('averageAge').textContent = data.averageAge;
+            const usersPerCityList = document.getElementById('usersPerCity');
+            usersPerCityList.innerHTML = '';
+            data.usersPerCity.forEach(city => {
+                const li = document.createElement('li');
+                li.textContent = `${city.kota}: ${city.count}`;
+                usersPerCityList.appendChild(li);
+            });
+            document.getElementById('loading').classList.add('hidden');
+        }
+
+        // Muat data saat halaman dimuat
+        window.onload = loadDashboard;
+    </script>
+</body>
+</html>

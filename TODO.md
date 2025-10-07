@@ -1,0 +1,4 @@
+- [x] Update package.json to add pg dependency
+- [x] Create index.js with PostgreSQL connection and table query
+- [x] Install dependencies with npm install
+- [x] Run the script with node index.js (failed due to PostgreSQL authentication)
