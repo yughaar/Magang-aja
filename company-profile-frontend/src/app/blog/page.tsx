@@ -37,8 +37,8 @@ export default async function BlogPage() {
   const posts = await getPosts();
 
   return (
-    // 1. Latar belakang biru pekat untuk seluruh halaman
-    <div className="bg-hanadiv-blue">
+    // 1. Latar belakang gradient untuk seluruh halaman
+    <div className="min-h-screen bg-gradient-to-b from-[#1D3380] to-[#3B65C4]">
       
       {/* 2. Header Biru Baru */}
       <section className="pt-20 pb-16 text-white">

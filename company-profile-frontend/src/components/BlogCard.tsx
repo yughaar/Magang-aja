@@ -36,7 +36,7 @@ export default function BlogCard({ title, slug, excerpt, category, date }: BlogC
         
         {/* Kategori dan Tanggal */}
         <div className="flex justify-between items-center mb-3">
-          <span className="bg-hanadiv-orange text-white text-xs font-semibold px-3 py-1 rounded-md">
+          <span className="bg-[#F3732A] text-white text-xs font-semibold px-3 py-1 rounded-md">
             {category}
           </span>
           <div className="flex items-center text-xs text-gray-500">

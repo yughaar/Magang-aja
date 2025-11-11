@@ -13,13 +13,16 @@ const config: Config = {
         'hero-wave': "url('/hero-wave.svg')",
       },
       colors: {
-        // 1. GANTI WARNA BIRU INI
-        'hanadiv-blue': '#0a0a0a', // Menjadi abu-abu sangat gelap (hampir hitam)
+        // Primary blue color
+        'hanadiv-blue': '#1D3380',
         
-        // 2. GANTI WARNA BIRU TUA INI
-        'hanadiv-darkblue': '#000000', // Menjadi hitam murni (untuk footer)
+        // Secondary blue color
+        'hanadiv-blue-secondary': '#3B65C4',
         
-        // 3. WARNA ORANYE TETAP SAMA
+        // Dark blue for footer
+        'hanadiv-darkblue': '#1D3380',
+        
+        // Orange accent color
         'hanadiv-orange': '#f97316', 
       },
     },

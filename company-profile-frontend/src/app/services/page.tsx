@@ -62,7 +62,7 @@ const servicesData = [
 
 // --- Komponen Kartu Layanan Baru (Sederhana) ---
 interface ServiceCardProps {
-  icon: React.ReactElement; // Menggunakan ReactElement agar bisa di-clone
+  icon: React.ReactNode;
   title: string;
   description: string;
 }
@@ -73,7 +73,9 @@ function ServiceCard({ icon, title, description }: ServiceCardProps) {
     <div className="bg-white p-6 rounded-xl border border-gray-200/80">
       {/* Ikon */}
       <div className="mb-4 inline-block p-3 border-2 border-orange-200/70 rounded-lg">
-        {React.cloneElement(icon, { className: "w-7 h-7 text-hanadiv-orange" })}
+        <div className="w-7 h-7 text-hanadiv-orange">
+          {icon}
+        </div>
       </div>
       {/* Judul */}
       <h3 className="text-xl font-bold text-gray-900 mb-2">
@@ -91,8 +93,8 @@ function ServiceCard({ icon, title, description }: ServiceCardProps) {
 // --- Komponen Halaman Utama ---
 export default function Services() {
   return (
-    // 1. Latar belakang biru pekat untuk seluruh halaman
-    <div className="bg-hanadiv-blue">
+    // 1. Latar belakang gradient untuk seluruh halaman
+    <div className="min-h-screen bg-gradient-to-b from-[#1D3380] to-[#3B65C4]">
       
       {/* 2. Header Biru Baru */}
       <section className="pt-20 pb-16 text-white">

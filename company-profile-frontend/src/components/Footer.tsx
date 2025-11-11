@@ -5,15 +5,15 @@ import Link from 'next/link';
 export default function Footer() {
   return (
     // 1. Ganti bg-white menjadi biru gelap dan teks jadi terang
-    <footer className="bg-hanadiv-darkblue text-gray-300 pt-16 pb-8">
+    <footer className="bg-[#1D3380] text-gray-300 pt-16 pb-8">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
           
           {/* Kolom 1: Logo & Slogan */}
           <div className="col-span-2 md:col-span-1">
             {/* 2. Ubah warna logo dan nama */}
-            <Link href="/" className="font-bold text-2xl text-white">
-              HANADIV TECH
+            <Link href="/" className="font-bold text-2xl inline-block">
+              <span className="text-[#F3732A]">H</span><span className="text-black bg-white px-2 py-1 rounded">ANADIV TECH</span>
             </Link>
             <p className="text-gray-400 mt-2 text-sm">
               Delivering innovative technology solutions for modern businesses.
@@ -25,10 +25,10 @@ export default function Footer() {
           <div>
             <h5 className="font-semibold text-white mb-4">Quick Links</h5>
             <ul className="space-y-2">
-              <li><Link href="/" className="text-sm text-gray-400 hover:text-white">Home</Link></li>
               <li><Link href="/services" className="text-sm text-gray-400 hover:text-white">Services</Link></li>
               <li><Link href="/blog" className="text-sm text-gray-400 hover:text-white">Blog & News</Link></li>
               <li><Link href="/about" className="text-sm text-gray-400 hover:text-white">About Us</Link></li>
+              <li><Link href="/contact" className="text-sm text-gray-400 hover:text-white">Contact</Link></li>
             </ul>
           </div>
           

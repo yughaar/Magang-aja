@@ -3,12 +3,14 @@
 import React from 'react';
 
 // Komponen kecil untuk info kontak
-function ContactInfo({ icon, title, text }: { icon: React.ReactElement, title: string, text: string }) {
+function ContactInfo({ icon, title, text }: { icon: React.ReactNode, title: string, text: string }) {
   return (
     <div className="flex items-start">
       <div className="flex-shrink-0">
         <div className="bg-orange-50 p-3 rounded-lg">
-          {React.cloneElement(icon, { className: "w-6 h-6 text-hanadiv-orange" })}
+          <div className="w-6 h-6 text-hanadiv-orange">
+            {icon}
+          </div>
         </div>
       </div>
       <div className="ml-4">
@@ -21,8 +23,8 @@ function ContactInfo({ icon, title, text }: { icon: React.ReactElement, title: s
 
 export default function ContactPage() {
   return (
-    // 1. Latar belakang biru pekat
-    <div className="bg-hanadiv-blue">
+    // 1. Latar belakang gradient
+    <div className="min-h-screen bg-gradient-to-b from-[#1D3380] to-[#3B65C4]">
       
       {/* 2. Hero Section Biru */}
       <section className="pt-20 pb-16 text-white">
@@ -106,7 +108,7 @@ export default function ContactPage() {
                 <div>
                   <button 
                     type="submit" 
-                    className="w-full bg-hanadiv-orange text-white font-semibold py-3 px-6 rounded-md hover:bg-orange-600 transition duration-300"
+                    className="w-full bg-[#F3732A] text-white font-semibold py-3 px-6 rounded-md hover:opacity-90 transition duration-300"
                   >
                     Send Message
                   </button>
