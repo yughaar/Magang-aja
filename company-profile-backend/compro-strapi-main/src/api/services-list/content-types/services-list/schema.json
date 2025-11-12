@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "services_lists",
+  "info": {
+    "singularName": "services-list",
+    "pluralName": "services-lists",
+    "displayName": "Services List"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}

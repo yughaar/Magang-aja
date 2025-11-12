@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_blocks_why_choose_sections",
+  "info": {
+    "displayName": "Why Choose Section"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "text": {
+      "type": "text"
+    },
+    "cards": {
+      "type": "component",
+      "component": "shared.card",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

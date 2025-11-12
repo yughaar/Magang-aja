@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_footer_brandings",
+  "info": {
+    "displayName": "Branding"
+  },
+  "options": {},
+  "attributes": {
+    "tagLine": {
+      "type": "text"
+    },
+    "ptName": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_blocks_blog_and_news_sections",
+  "info": {
+    "displayName": "Blog & News Sections"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}
