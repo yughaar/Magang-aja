@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "blogs",
+  "info": {
+    "singularName": "blog",
+    "pluralName": "blogs",
+    "displayName": "Blog"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "categories": {
+      "type": "enumeration",
+      "enum": [
+        "Technology"
+      ]
+    },
+    "date": {
+      "type": "datetime"
+    },
+    "content": {
+      "type": "richtext"
+    }
+  }
+}

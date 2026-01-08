@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_layout_footers",
+  "info": {
+    "displayName": "Footer"
+  },
+  "options": {},
+  "attributes": {
+    "brand": {
+      "type": "component",
+      "component": "footer.branding",
+      "repeatable": false
+    },
+    "contact": {
+      "type": "component",
+      "component": "footer.contact",
+      "repeatable": false
+    },
+    "service": {
+      "type": "component",
+      "component": "footer.service",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

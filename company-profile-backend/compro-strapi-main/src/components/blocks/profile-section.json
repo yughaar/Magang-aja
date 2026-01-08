@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_blocks_profile_sections",
+  "info": {
+    "displayName": "Profile Section"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "text": {
+      "type": "text"
+    },
+    "cards": {
+      "type": "component",
+      "component": "shared.card",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

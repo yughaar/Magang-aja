@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_shared_texts",
+  "info": {
+    "displayName": "Text"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

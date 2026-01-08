@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_blocks_contact_us_sections",
+  "info": {
+    "displayName": "Contact Us Section"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "cards": {
+      "type": "component",
+      "component": "shared.card",
+      "repeatable": true
+    },
+    "titleMessage": {
+      "type": "string"
+    },
+    "descriptionMessage": {
+      "type": "text"
+    },
+    "input": {
+      "type": "component",
+      "component": "shared.input",
+      "repeatable": true
+    },
+    "btnText": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

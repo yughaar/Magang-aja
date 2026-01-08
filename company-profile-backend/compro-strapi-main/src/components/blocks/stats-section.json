@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_blocks_stats_sections",
+  "info": {
+    "displayName": "Stats Section"
+  },
+  "options": {},
+  "attributes": {
+    "stats": {
+      "type": "component",
+      "component": "shared.stats",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

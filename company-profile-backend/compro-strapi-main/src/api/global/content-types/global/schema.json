@@ -1,0 +1,43 @@
+{
+  "kind": "singleType",
+  "collectionName": "globals",
+  "info": {
+    "singularName": "global",
+    "pluralName": "globals",
+    "displayName": "Global"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "header": {
+      "type": "component",
+      "component": "layout.header",
+      "repeatable": false
+    },
+    "blocks": {
+      "type": "dynamiczone",
+      "components": [
+        "blocks.why-choose-section",
+        "blocks.stats-section",
+        "blocks.service-section",
+        "blocks.profile-section",
+        "blocks.hero",
+        "blocks.contact-us-section",
+        "blocks.blog-and-news-sections"
+      ]
+    },
+    "footer": {
+      "type": "component",
+      "component": "layout.footer",
+      "repeatable": false
+    }
+  }
+}

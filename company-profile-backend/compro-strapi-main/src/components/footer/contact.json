@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_footer_contacts",
+  "info": {
+    "displayName": "Contact"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "contact": {
+      "type": "component",
+      "component": "shared.text",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}
