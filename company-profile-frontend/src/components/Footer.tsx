@@ -1,11 +1,14 @@
 // src/components/Footer.tsx
+import { getGlobal } from "@/lib/api/global.api";
 import Link from "next/link";
 
-export default function Footer() {
+export default async function Footer() {
+  const global = await getGlobal();
+  const footer = global.data.footer;
   return (
     <footer className="bg-[#1D3380] text-gray-300 pt-16 pb-8">
       <div className="container mx-auto px-6">
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-8 mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
           {/* Kolom 1: Logo & Slogan */}
           <div className="col-span-2 md:col-span-1">
             <Link
@@ -14,105 +17,69 @@ export default function Footer() {
                      bg-gradient-to-r from-[#F3732A] via-[#ffe8c7] to-[#ffffff] 
                       text-transparent bg-clip-text"
             >
-              HANADIV TECH
+              {footer.brand.ptName}
             </Link>
 
             <p className="text-gray-400 mt-2 text-sm max-w-xs">
-              Delivering innovative technology solutions for modern businesses.
+              {footer.brand.tagLine}
             </p>
           </div>
 
-          {/* Kolom 2: Quick Links */}
+          {/* Kolom 2: Services */}
           <div>
-            <h5 className="font-semibold text-white mb-4">Quick Links</h5>
+            <h5 className="font-semibold text-white mb-4">
+              {footer.service.title}
+            </h5>
             <ul className="space-y-2">
               <li>
                 <Link
                   href="/services"
                   className="text-sm text-gray-400 hover:text-white transition"
                 >
-                  Services
+                  {footer.service.links[0].label}
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/blog"
+                  href="/services"
                   className="text-sm text-gray-400 hover:text-white transition"
                 >
-                  Blog & News
+                  {footer.service.links[1].label}
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/about"
+                  href="/services"
                   className="text-sm text-gray-400 hover:text-white transition"
                 >
-                  About Us
+                  {footer.service.links[2].label}
                 </Link>
               </li>
               <li>
                 <Link
-                  href="/contact"
+                  href="/services"
                   className="text-sm text-gray-400 hover:text-white transition"
                 >
-                  Contact
+                  {footer.service.links[3].label}
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Kolom 3: Services */}
+          {/* Kolom 3: Contact */}
           <div>
-            <h5 className="font-semibold text-white mb-4">Services</h5>
-            <ul className="space-y-2">
-              <li>
-                <Link
-                  href="/services"
-                  className="text-sm text-gray-400 hover:text-white transition"
-                >
-                  Web Development
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/services"
-                  className="text-sm text-gray-400 hover:text-white transition"
-                >
-                  Mobile Apps
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/services"
-                  className="text-sm text-gray-400 hover:text-white transition"
-                >
-                  Cloud Solutions
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/services"
-                  className="text-sm text-gray-400 hover:text-white transition"
-                >
-                  Consulting
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Kolom 4: Contact */}
-          <div>
-            <h5 className="font-semibold text-white mb-4">Contact</h5>
+            <h5 className="font-semibold text-white mb-4">
+              {footer.contact.title}
+            </h5>
             <ul className="space-y-3 text-sm text-gray-400">
               <li className="flex items-center hover:text-white transition">
-                hanadivtech@gmail.com
+                {footer.contact.contact[0].text}
               </li>
               <li className="flex items-center hover:text-white transition">
-                +62 896-4356-5106
+                {footer.contact.contact[1].text}
               </li>
               <li className="flex items-center hover:text-white transition">
-                Vila Rizki Insaani Blok A1-7, Kecamatan Pagedangan, Kelurahan
-                Malangnengah, Kabupaten Tangerang, Banten, 15330
+                {footer.contact.contact[2].text}
               </li>
             </ul>
           </div>
