@@ -5,11 +5,11 @@
   },
   "options": {},
   "attributes": {
-    "title": {
-      "type": "string"
+    "placeholder": {
+      "type": "text"
     },
     "label": {
-      "type": "text"
+      "type": "string"
     }
   },
   "config": {}

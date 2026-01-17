@@ -169,8 +169,8 @@ export interface SharedInput extends Struct.ComponentSchema {
     displayName: 'input';
   };
   attributes: {
-    label: Schema.Attribute.Text;
-    title: Schema.Attribute.String;
+    label: Schema.Attribute.String;
+    placeholder: Schema.Attribute.Text;
   };
 }
 
