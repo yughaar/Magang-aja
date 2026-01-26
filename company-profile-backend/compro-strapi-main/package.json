@@ -15,16 +15,16 @@
     "upgrade:dry": "npx @strapi/upgrade latest --dry"
   },
   "dependencies": {
-    "@strapi/plugin-cloud": "5.29.0",
     "@strapi/plugin-users-permissions": "5.29.0",
+    "@strapi/provider-email-nodemailer": "5.29.0",
     "@strapi/strapi": "5.29.0",
     "better-sqlite3": "11.3.0",
+    "nodemailer": "^7.0.12",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.0.0",
     "styled-components": "^6.0.0"
   },
-  "devDependencies": {},
   "engines": {
     "node": ">=18.0.0 <=22.x.x",
     "npm": ">=6.0.0"

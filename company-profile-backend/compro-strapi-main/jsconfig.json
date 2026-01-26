@@ -1,8 +1,10 @@
 {
   "compilerOptions": {
-    "moduleResolution": "nodenext",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
     "target": "ES2021",
-    "checkJs": true,
-    "allowJs": true
+    "checkJs": false,
+    "allowJs": true,
+    "types": ["node"]
   }
 }
