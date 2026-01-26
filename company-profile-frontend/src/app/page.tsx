@@ -5,6 +5,7 @@ import { getGlobal } from "@/lib/api/global.api";
 import { getServices } from "@/lib/api/services.api";
 import { getBlogs } from "@/lib/api/blog.api";
 import BlogSlider from "@/components/BlogSlider";
+import ContactForm from "@/components/ContactForm";
 
 // Komponen kecil untuk kartu fitur
 function FeatureCard({
@@ -90,7 +91,6 @@ export default async function Home() {
   const blogs = await getBlogs();
   const data = global.data;
   const sections = data.blocks;
-  console.log(sections);
   const hero = sections[0];
   const whyChoose = sections[1];
   const service = sections[2];
@@ -98,6 +98,10 @@ export default async function Home() {
   const about = sections[4];
   const stats = sections[5];
   const contact = sections[6];
+  const contactData = {
+    btnText: sections[6].btnText,
+    input: sections[6].input,
+  };
   return (
     // Wrapper utama
     <div className="min-h-screen">
@@ -292,78 +296,6 @@ export default async function Home() {
               title={contact.cards[2].title}
               text={contact.cards[2].description}
             />
-            {/* Email Card */}
-            {/* <div className="bg-white border border-gray-200 rounded-xl p-6 text-center shadow-sm">
-              <div className="w-16 h-16 bg-orange-50 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="#F3732A"
-                  className="w-8 h-8"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-[#1D3380] mb-2">Email</h3>
-              <p className="text-gray-600">info@hanadivtech.com</p>
-            </div> */}
-
-            {/* Phone Card */}
-            {/* <div className="bg-white border border-gray-200 rounded-xl p-6 text-center shadow-sm">
-              <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="#1D3380"
-                  className="w-8 h-8"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.211-.998-.552-1.33l-3.954-3.954a1.5 1.5 0 0 0-2.122 0L11.25 12.879a.75.75 0 0 1-1.06 0l-2.82-2.82a.75.75 0 0 1 0-1.06l3.172-3.172a1.5 1.5 0 0 0 0-2.122L8.662 2.804A1.5 1.5 0 0 0 7.33 2.25H6A2.25 2.25 0 0 0 3.75 4.5v2.25Z"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-[#1D3380] mb-2">Phone</h3>
-              <p className="text-gray-600">+62 123 456 7890</p>
-            </div> */}
-
-            {/* Location Card */}
-            {/* <div className="bg-white border border-gray-200 rounded-xl p-6 text-center shadow-sm">
-              <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="#1D3380"
-                  className="w-8 h-8"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
-                  />
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-[#1D3380] mb-2">
-                Location
-              </h3>
-              <p className="text-gray-600">Jakarta, Indonesia</p>
-            </div> */}
           </div>
 
           {/* Contact Form Section */}
@@ -375,85 +307,8 @@ export default async function Home() {
               <p className="text-gray-600">{contact.descriptionMessage}</p>
             </div>
 
-            <form action="#" method="POST" className="space-y-6">
-              {/* Name and Email Row */}
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label
-                    htmlFor="contact-name"
-                    className="block text-sm font-medium text-gray-800 mb-2 "
-                  >
-                    {contact.input[0].label}
-                  </label>
-                  <input
-                    type="text"
-                    id="contact-name"
-                    name="name"
-                    placeholder={contact.input[0].placeholder}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-[#F3732A] focus:border-[#F3732A] outline-none placeholder:text-gray-300 text-gray-600"
-                  />
-                </div>
-                <div>
-                  <label
-                    htmlFor="contact-email"
-                    className="block text-sm font-medium text-gray-800 mb-2"
-                  >
-                    {contact.input[1].label}
-                  </label>
-                  <input
-                    type="email"
-                    id="contact-email"
-                    name="email"
-                    placeholder={contact.input[1].placeholder}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-[#F3732A] focus:border-[#F3732A] outline-none placeholder:text-gray-300 text-gray-600"
-                  />
-                </div>
-              </div>
-
-              {/* Subject */}
-              <div>
-                <label
-                  htmlFor="contact-subject"
-                  className="block text-sm font-medium text-gray-800 mb-2"
-                >
-                  {contact.input[2].label}
-                </label>
-                <input
-                  type="text"
-                  id="contact-subject"
-                  name="subject"
-                  placeholder={contact.input[2].placeholder}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-[#F3732A] focus:border-[#F3732A] outline-none placeholder:text-gray-300 text-gray-600"
-                />
-              </div>
-
-              {/* Message */}
-              <div>
-                <label
-                  htmlFor="contact-message"
-                  className="block text-sm font-medium text-gray-800 mb-2"
-                >
-                  {contact.input[3].label}
-                </label>
-                <textarea
-                  id="contact-message"
-                  name="message"
-                  rows={5}
-                  placeholder={contact.input[3].placeholder}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm resize-y focus:ring-2 focus:ring-[#F3732A] focus:border-[#F3732A] outline-none placeholder:text-gray-300 text-gray-600"
-                ></textarea>
-              </div>
-
-              {/* Submit Button */}
-              <div>
-                <button
-                  type="submit"
-                  className="w-full bg-[#F3732A] text-white font-semibold py-3 px-6 rounded-md hover:opacity-90 transition duration-300"
-                >
-                  {contact.btnText}
-                </button>
-              </div>
-            </form>
+            {/* Contact Form Component */}
+            <ContactForm contact={contactData} />
           </div>
         </div>
       </section>
